@@ -1,10 +1,10 @@
-amwa_id: BCP-TEMPLATE
-url: https://specs.amwa.tv/bcp-template
-name: AMWA NMOS Best Common Practice Template
-status: Continuing
-repo_name: bcp-template
-alt_repo_name: nmos-bcp-template
-repo_url: https://github.com/AMWA-TV/bcp-template
+amwa_id: BCP-IPMX-HKEP
+url: https://specs.amwa.tv/bcp-ipmx-hkep
+name: NMOS Support for IPMX/HKEP
+status: Work In Progress
+repo_name: bcp-ipmx-hkep
+alt_repo_name: bcp-ipmx-hkep
+repo_url: https://github.com/AMWA-TV/bcp-ipmx-hkep
 releases:
-default_branch: main
+default_branch: v1.0-dev
 show_in_index: false
