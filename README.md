@@ -13,7 +13,7 @@ This repository holds the source for this Specification, part of the family of [
 
 ### Why does it matter?
 
--An NMOS Controller must verify that any Receiver is compliant with a Sender producing HDCP-encrypted streams, as only IPMX/HKEP-compliant Receivers can process such content.
+- An NMOS Controller must verify that any Receiver is compliant with a Sender producing HDCP-encrypted streams, as only IPMX/HKEP-compliant Receivers can process such content.
 - A standardized framework enables Controllers to systematically verify and/or enforce compliance.
 
 ### How does it work?
