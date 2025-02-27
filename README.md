@@ -9,15 +9,18 @@ This repository holds the source for this Specification, part of the family of [
 
 ### What does it do?
 
-- xxx
+- Establishes a standardized mechanism for NMOS Senders and Receivers to declare support for HDCP over IP streaming using IPMX/HKEP (VSF TR-10-5).
 
 ### Why does it matter?
 
-- xxx
+-An NMOS Controller must verify that any Receiver is compliant with a Sender producing HDCP-encrypted streams, as only IPMX/HKEP-compliant Receivers can process such content.
+- A standardized framework enables Controllers to systematically verify and/or enforce compliance.
 
 ### How does it work?
 
-- xxx
+- Documents how IPMX/HKEP capabilities are announced by both Senders and Receivers.
+- Explains how to constrain a Sender’s IPMX/HKEP capability.
+- Outlines the requirements for Senders, Receivers, and Controllers regarding the IPMX/HKEP feature.
 
 <!-- INTRO-END -->
 
