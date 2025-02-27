@@ -70,10 +70,14 @@ A Receiver implementing [BCP-008-01][] and supporting HDCP encryption and the HK
 A Sender implementing [BCP-008-02][] and supporting HDCP encryption and the HKEP protocol MAY notify that the HDCP content protection system prevents the Sender from accessing or re-transmitting HDCP content using the `essenceStatus` and `essenceStatusMessage` properties of the Sender's associated `NcSenderMonitor`.
 
 [RFC-2119]: https://tools.ietf.org/html/rfc2119 "Key words for use in RFCs"
+
+<!--
 [IS-04]: https://specs.amwa.tv/is-04/ "AMWA IS-04 NMOS Discovery and Registration Specification"
 [IS-05]: https://specs.amwa.tv/is-05/ "AMWA IS-05 NMOS Device Connection Management Specification"
-[IS-11]: https://specs.amwa.tv/is-11/ "AMWA IS-11 NMOS Stream Compatibility Management Specification"
 [NMOS Parameter Registers]: https://specs.amwa.tv/nmos-parameter-registers/ "Common parameter values for AMWA NMOS Specifications"
+-->
+
+[IS-11]: https://specs.amwa.tv/is-11/ "AMWA IS-11 NMOS Stream Compatibility Management Specification"
 [TR-10-5]: https://vsf.tv/download/technical_recommendations/VSF_TR-10-5_2024-02-23.pdf "HDCP Key Exchange Protocol - HKEP"
 [BCP-008-01]: https://specs.amwa.tv/bcp-008-01/ "NMOS Receiver Status"
 [BCP-008-02]: https://specs.amwa.tv/bcp-008-02/ "NMOS Sender Status"
