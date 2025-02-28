@@ -25,7 +25,9 @@ Nodes capable of transmitting HDCP encrypted streams using the IPMX/HKEP protoco
 
 Nodes capable of receiving HDCP encrypted streams using the IPMX/HKEP protocol MUST have Receiver resources in the IS-04 Node API.
 
-Nodes compliant with this specification MUST implement IS-04 v1.3 or higher and IS-05 v1.1 or higher.
+Nodes compliant with this specification MUST implement [IS-04][] v1.3 or higher and [IS-05][] v1.1 or higher.
+
+As HDCP encryption applies only to audio and video streams using an RTP transport, any Receiver whose Flow `format` is neither `urn:x-nmos:format:audio` nor `urn:x-nmos:format:video`, or whose `transport` is neither `urn:x-nmos:transport:rtp` nor one of its subclassifications, and any Sender whose Flow `format` is neither `urn:x-nmos:format:audio` nor `urn:x-nmos:format:video`, or whose `transport` is neither `urn:x-nmos:transport:rtp` nor one of its subclassifications, MUST NOT implement this specification.
 
 ## HKEP
 
@@ -69,14 +71,15 @@ A Receiver implementing [BCP-008-01][] and supporting HDCP encryption and the HK
 
 A Sender implementing [BCP-008-02][] and supporting HDCP encryption and the HKEP protocol MAY notify that the HDCP content protection system prevents the Sender from accessing or re-transmitting HDCP content using the `essenceStatus` and `essenceStatusMessage` properties of the Sender's associated `NcSenderMonitor`.
 
-[RFC-2119]: https://tools.ietf.org/html/rfc2119 "Key words for use in RFCs"
+### IS-11
 
-<!--
+For an Input shared by multiple IS-11 Senders that support being constrained for the `urn:x-nmos:cap:transport:hkep` capability to either `true` or `false`, all such Senders MUST be constrained to `false` in order for that Input to become non-HDCP protected. Consequently, if any of these Senders is not constrained to `false`, then those Senders that are constrained to `false` MUST enter the IS-11 `active_constraints_violation` state, because the essence remains HDCP-protected until all relevant Senders are set to false.
+
+
+
+[RFC-2119]: https://tools.ietf.org/html/rfc2119 "Key words for use in RFCs"
 [IS-04]: https://specs.amwa.tv/is-04/ "AMWA IS-04 NMOS Discovery and Registration Specification"
 [IS-05]: https://specs.amwa.tv/is-05/ "AMWA IS-05 NMOS Device Connection Management Specification"
-[NMOS Parameter Registers]: https://specs.amwa.tv/nmos-parameter-registers/ "Common parameter values for AMWA NMOS Specifications"
--->
-
 [IS-11]: https://specs.amwa.tv/is-11/ "AMWA IS-11 NMOS Stream Compatibility Management Specification"
 [TR-10-5]: https://vsf.tv/download/technical_recommendations/VSF_TR-10-5_2024-02-23.pdf "HDCP Key Exchange Protocol - HKEP"
 [BCP-008-01]: https://specs.amwa.tv/bcp-008-01/ "NMOS Receiver Status"
