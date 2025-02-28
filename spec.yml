@@ -1,10 +1,10 @@
-amwa_id: BCP-IPMX-HKEP
-url: https://specs.amwa.tv/bcp-ipmx-hkep
+amwa_id: BCP-010-01
+url: https://specs.amwa.tv/bcp-010-01
 name: NMOS Support for IPMX/HKEP
 status: Work In Progress
-repo_name: bcp-ipmx-hkep
+repo_name: bcp-010-01
 alt_repo_name: bcp-ipmx-hkep
-repo_url: https://github.com/AMWA-TV/bcp-ipmx-hkep
+repo_url: https://github.com/AMWA-TV/bcp-010-01
 releases:
 default_branch: v1.0-dev
 show_in_index: false
