@@ -73,8 +73,7 @@ A Sender implementing [BCP-008-02][] and supporting HDCP encryption and the HKEP
 
 ### IS-11
 
-For an Input shared by multiple IS-11 Senders that support being constrained for the `urn:x-nmos:cap:transport:hkep` capability to either `true` or `false`, all such Senders MUST be constrained to `false` in order for that Input to become non-HDCP protected. Consequently, if any of these Senders is not constrained to `false`, then those Senders that are constrained to `false` MUST enter the IS-11 `active_constraints_violation` state, because the essence remains HDCP-protected until all relevant Senders are set to false.
-
+For an Input shared by multiple IS-11 Senders that cab be constrained for the `urn:x-nmos:cap:transport:hkep` capability to either `true` or `false`, any Senders constrained to `false` MUST cause that Input to become non-HDCP protected. Consequently, any of these Senders not constrained to `false` MUST enter the IS-11 `active_constraints_violation` state, because the essence is no longer HDCP-protected until the `urn:x-nmos:cap:transport:hkep` capability of all relevant Senders is set to `true`.
 
 
 [RFC-2119]: https://tools.ietf.org/html/rfc2119 "Key words for use in RFCs"
