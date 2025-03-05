@@ -82,9 +82,9 @@ A Sender implementing BCP-008-02 and supporting HDCP encryption and the HKEP pro
 
 A Receiver implementing BCP-008-01 and supporting HDCP encryption and the HKEP protocol MAY notify that HDCP content protection system prevents the Receiver from accessing or re-transmitting HDCP content using the streamStatus and streamStatusMessage properties of the Receiver's associated NcReceiverMonitor. Receivers implementing [IS-11][] providing notifications through BCP-008-01 MUST also implement the [base notification method](#base-notification-method).
 
-### IS-11
+### Inputs Shared by Multiple IS-11 Senders
 
-For an Input shared by multiple IS-11 Senders that cab be constrained for the `urn:x-nmos:cap:transport:hkep` capability to either `true` or `false`, any Senders constrained to `false` MUST cause that Input to become non-HDCP protected. Consequently, any of these Senders not constrained to `false` MUST enter the IS-11 `active_constraints_violation` state, because the essence is no longer HDCP-protected until the `urn:x-nmos:cap:transport:hkep` capability of all relevant Senders is set to `true`.
+For an Input shared by multiple [IS-11][] Senders that can be constrained for the `urn:x-nmos:cap:transport:hkep` capability to either `true` or `false`, any Senders constrained to `false` MUST cause that Input to become non-HDCP protected. Consequently, any of these Senders not constrained to `false` MUST enter the IS-11 `active_constraints_violation` state, because the essence is no longer HDCP-protected until the `urn:x-nmos:cap:transport:hkep` capability of all relevant Senders is set to `true`.
 
 
 [RFC-2119]: https://tools.ietf.org/html/rfc2119 "Key words for use in RFCs"
