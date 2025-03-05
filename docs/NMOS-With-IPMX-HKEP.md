@@ -67,6 +67,8 @@ If the `urn:x-nmos:cap:transport:hkep` capability allows both `true` and `false`
 
 ### HDCP Content Protection
 
+The base notification method is not strictly required but is highly recommended. However, if a device implements notifications through BCP-008-01 or BCP-008-02, it is mandatory to also implement the base notification method.
+
 #### Base notification method
 
 A Sender implementing [IS-11][] and supporting HDCP encryption and the HKEP protocol SHOULD notify that HDCP content protection system prevents the Sender from accessing or re-transmitting HDCP content using the IS-11 status objects. A message SHOULD be registered in the `debug` attribute of the IS-11 Sender's `status` object when the `state` of the Sender becomes `no_essence` or in the `debug` attribute of the IS-11 Input's `status` object when the `state` of the Input becomes `no_signal`.
