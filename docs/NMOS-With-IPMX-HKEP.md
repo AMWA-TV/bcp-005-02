@@ -65,7 +65,7 @@ If the `urn:x-nmos:cap:transport:hkep` capability only allows the value `false`,
 
 If the `urn:x-nmos:cap:transport:hkep` capability allows both `true` and `false` values, then the Sender's associated SDP transport file MUST have an `hkep` attribute when the stream is HDCP-protected and MUST NOT have an `hkep` attribute when the stream is not HDCP-protected.
 
-### HDCP Content Protection
+### HDCP Content Protection Notifications
 
 The base notification method is not strictly required but is highly recommended. However, if a device implements notifications through BCP-008-01 or BCP-008-02, it is mandatory to also implement the base notification method.
 
