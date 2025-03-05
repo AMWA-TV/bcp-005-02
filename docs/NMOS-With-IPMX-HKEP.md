@@ -67,9 +67,18 @@ If the `urn:x-nmos:cap:transport:hkep` capability allows both `true` and `false`
 
 ### HDCP Content Protection
 
-A Receiver implementing [BCP-008-01][] and supporting HDCP encryption and the HKEP protocol MAY notify that the HDCP content protection system prevents the Receiver from accessing or re-transmitting HDCP content using the `streamStatus` and `streamStatusMessage` properties of the Receiver's associated `NcReceiverMonitor`.
+#### Base notification method
 
-A Sender implementing [BCP-008-02][] and supporting HDCP encryption and the HKEP protocol MAY notify that the HDCP content protection system prevents the Sender from accessing or re-transmitting HDCP content using the `essenceStatus` and `essenceStatusMessage` properties of the Sender's associated `NcSenderMonitor`.
+A Sender implementing IS-11 and supporting HDCP encryption and the HKEP protocol SHOULD notify that the HDCP content protection system prevents the Sender from accessing or re-transmitting HDCP content using the IS-11 status objects. A message SHOULD be registered in the `debug` attribute of the IS-11 Sender's `status` object when the `state` of the Sender becomes `no_essence` or in the `debug` attribute of the  IS-11 Input's `status` object when the `state` of the Input becomes `no_signal`.
+
+A Receiver implementing IS-11 and supporting HDCP encryption and the HKEP protocol SHOULD notify that the HDCP content protection system prevents the Receiver from accessing or re-transmitting HDCP content using the IS-11 status objects. A message SHOULD be registered in the `debug` attribute of the IS-11 Receiver's `status` object when the `state` of the Receiver becomes `unknown` or in the `debug` attribute of the  IS-11 Output's `status` object when the `state` of the Output becomes `no_signal` or `default_signal`.
+
+#### Optional notification method
+
+A Sender implementing BCP-008-02 and supporting HDCP encryption and the HKEP protocol MAY notify that the HDCP content protection system prevents the Sender from accessing or re-transmitting HDCP content using the essenceStatus and essenceStatusMessage properties of the Sender's associated NcSenderMonitor. Senders implementing IS-11 providing notifications through BCP-008-02 MUST also implement the [base notification method](#base-notification-method).
+
+
+A Receiver implementing BCP-008-01 and supporting HDCP encryption and the HKEP protocol MAY notify that the HDCP content protection system prevents the Receiver from accessing or re-transmitting HDCP content using the streamStatus and streamStatusMessage properties of the Receiver's associated NcReceiverMonitor. Receivers implementing IS-11 providing notifications through BCP-008-01 MUST also implement the [base notification method](#base-notification-method).
 
 ### IS-11
 
