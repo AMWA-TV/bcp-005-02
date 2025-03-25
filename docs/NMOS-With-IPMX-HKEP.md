@@ -75,7 +75,7 @@ A Sender implementing [IS-11][] and supporting HDCP encryption and the HKEP prot
 
 A Receiver implementing [IS-11][] and supporting HDCP encryption and the HKEP protocol SHOULD notify that HDCP content protection system prevents the Receiver from accessing or re-transmitting HDCP content using the IS-11 status objects. A message SHOULD be registered in the `debug` attribute of the IS-11 Receiver's `status` object when the `state` of the Receiver becomes `unknown` or in the `debug` attribute of the IS-11 Output's `status` object when the `state` of the Output becomes `no_signal` or `default_signal`.
 
-#### Optional notification method
+#### Additional notification method
 
 A Sender implementing [BCP-008-02][] and supporting HDCP encryption and the HKEP protocol MAY notify that HDCP content protection system prevents the Sender from accessing or re-transmitting HDCP content using the essenceStatus and essenceStatusMessage properties of the Sender's associated NcSenderMonitor. Senders implementing [IS-11][] providing notifications through [BCP-008-02][] MUST also implement the [base notification method](#base-notification-method).
 
