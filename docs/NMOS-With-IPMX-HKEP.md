@@ -55,7 +55,7 @@ In the HKEP specification, the use of the expression "hkep session attribute" do
 
 A Controller MAY activate a Receiver and configure the HDCP encryption and the HKEP protocol using the SDP transport file from a Sender that includes `hkep` attributes. A Controller MUST use an SDP transport file to provide the `hkep` parameters of a stream to the Receiver.
 
-> Note: The `hkep` parameters are only available in an SDP transport file. There is not equivalent transport parameters.
+> Note: The `hkep` parameters are only available in an SDP transport file. There are no equivalent transport parameters.
 
 ### Consistency
 
