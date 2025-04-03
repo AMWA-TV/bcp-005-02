@@ -78,7 +78,7 @@ A Receiver implementing [IS-11][] and supporting HDCP encryption and the HKEP pr
 #### Enhanced notification method
 
 
-A Sender implementing [BCP-008-02][] and supporting HDCP encryption and the HKEP protocol MAY notify that HDCP content protection system prevents the Sender from accessing or re-transmitting HDCP content using the essenceStatus and essenceStatusMessage properties of the Sender's associated NcSenderMonitor. The essenceStatus MAY become Unhealthy or PartiallyHealthy depending on the severity if the HDCP content protection issue. Senders implementing [IS-11][] providing notifications through [BCP-008-02][] MUST also implement the [base notification method](#base-notification-method).
+A Sender implementing [BCP-008-02][] and supporting HDCP encryption and the HKEP protocol MAY notify that HDCP content protection system prevents the Sender from accessing or re-transmitting HDCP content using the essenceStatus and essenceStatusMessage properties of the Sender's associated NcSenderMonitor. The essenceStatus MAY become Unhealthy or PartiallyHealthy depending on the severity of underlying HDCP content protection issues. Senders implementing [IS-11][] providing notifications through [BCP-008-02][] MUST also implement the [base notification method](#base-notification-method).
 
 
 
