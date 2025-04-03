@@ -82,7 +82,7 @@ A Sender implementing [BCP-008-02][] and supporting HDCP encryption and the HKEP
 
 
 
-A Receiver implementing [BCP-008-01][] and supporting HDCP encryption and the HKEP protocol MAY notify that HDCP content protection system prevents the Receiver from accessing or re-transmitting HDCP content using the streamStatus and streamStatusMessage properties of the Receiver's associated NcReceiverMonitor. The streamStatus MAY become Unhealthy or PartiallyHealthy depending on the severity if the HDCP content protection issue. Receivers implementing [IS-11][] providing notifications through [BCP-008-01][] MUST also implement the [base notification method](#base-notification-method).
+A Receiver implementing [BCP-008-01][] and supporting HDCP encryption and the HKEP protocol MAY notify that HDCP content protection system prevents the Receiver from accessing or re-transmitting HDCP content using the streamStatus and streamStatusMessage properties of the Receiver's associated NcReceiverMonitor. The streamStatus MAY become Unhealthy or PartiallyHealthy depending on the severity of underlying HDCP content protection issues. Receivers implementing [IS-11][] providing notifications through [BCP-008-01][] MUST also implement the [base notification method](#base-notification-method).
 
 ### Inputs Shared by Multiple IS-11 Senders
 
