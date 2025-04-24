@@ -33,11 +33,11 @@ A Receiver SHOULD provide a `urn:x-nmos:cap:transport:hkep` capability to indica
 
 A Receiver MAY support either or both `true` and `false` values.
 
-A Controller MUST verify the compliance of Receivers with an active Sender using HDCP encryption and the HKEP protocol by referring to the Sender's SDP transport file `hkep` attribute or by checking the Sender's associated `urn:x-nmos:hkep` attribute. The presence of the `hkep` attribute in an SDP transport file or a value of `true` for the associated `urn:x-nmos:hkep` Sender attribute indicates that the stream is HDCP-protected. Only Receivers supporting HDCP encryption and the HKEP protocol MAY consume such streams.
+A Controller MUST verify the compliance of Receivers with an active Sender using HDCP encryption and the HKEP protocol by referring to the Sender's SDP transport file `hkep` attribute or by checking the Sender's associated `hkep` attribute. The presence of the `hkep` attribute in an SDP transport file or a value of `true` for the associated `hkep` Sender attribute indicates that the stream is HDCP-protected. Only Receivers supporting HDCP encryption and the HKEP protocol MAY consume such streams.
 
-A Sender compliant with the [HKEP](#hkep) section of this document MUST provide a `urn:x-nmos:hkep` Sender attribute to indicate that HDCP encryption and the HKEP protocol are used by the Sender. This attribute MUST be `true` if an `hkep` attribute is present in the Sender's SDP transport file, and MUST be `false` if no `hkep` attributes are present. If an SDP transport file is not currently available because the Sender is inactive, this attribute indicates whether or not such an SDP transport file would contain an `hkep` attribute if the Sender were active at that time.
+A Sender compliant with the [HKEP](#hkep) section of this document MUST provide a `hkep` Sender attribute to indicate that HDCP encryption and the HKEP protocol are used by the Sender. This attribute MUST be `true` if an `hkep` attribute is present in the Sender's SDP transport file, and MUST be `false` if no `hkep` attributes are present. If an SDP transport file is not currently available because the Sender is inactive, this attribute indicates whether or not such an SDP transport file would contain an `hkep` attribute if the Sender were active at that time.
 
-> Note: A Sender not providing the `urn:x-nmos:hkep` attribute is either not supporting HDCP encryption and the HKEP protocol or declares itself as not being compatible with the [HKEP](#hkep) section of this document.
+> Note: A Sender not providing the `hkep` attribute is either not supporting HDCP encryption and the HKEP protocol or declares itself as not being compatible with the [HKEP](#hkep) section of this document.
 
 A Sender MAY provide a `urn:x-nmos:cap:transport:hkep` capability to indicate that HDCP encryption and the HKEP protocol are supported. A Sender MAY support either or both `true` and `false` values. A Controller MAY use a Sender's `urn:x-nmos:cap:transport:hkep` capability to verify Receiver compliance with the Sender and, if necessary, constrain the Sender to ensure compliance with the Receivers. A Sender constrained to `false` for this capability MUST NOT be part of an HDCP topology and MUST NOT access, produce, or stream HDCP-protected content. A Sender indicates its support for being constrained for this capability by enumerating the `urn:x-nmos:cap:transport:hkep` capability in its [IS-11][] `constraints/supported` endpoint.
 
@@ -77,16 +77,13 @@ A Receiver implementing [IS-11][] and supporting HDCP encryption and the HKEP pr
 
 #### Enhanced notification method
 
-
 A Sender implementing [BCP-008-02][] and supporting HDCP encryption and the HKEP protocol MAY notify that HDCP content protection system prevents the Sender from accessing or re-transmitting HDCP content using the essenceStatus and essenceStatusMessage properties of the Sender's associated NcSenderMonitor. The essenceStatus MAY become Unhealthy or PartiallyHealthy depending on the severity of underlying HDCP content protection issues. Senders implementing [IS-11][] providing notifications through [BCP-008-02][] MUST also implement the [base notification method](#base-notification-method).
-
-
 
 A Receiver implementing [BCP-008-01][] and supporting HDCP encryption and the HKEP protocol MAY notify that HDCP content protection system prevents the Receiver from accessing or re-transmitting HDCP content using the streamStatus and streamStatusMessage properties of the Receiver's associated NcReceiverMonitor. The streamStatus MAY become Unhealthy or PartiallyHealthy depending on the severity of underlying HDCP content protection issues. Receivers implementing [IS-11][] providing notifications through [BCP-008-01][] MUST also implement the [base notification method](#base-notification-method).
 
 ### Inputs Shared by Multiple IS-11 Senders
 
-For an Input shared by multiple [IS-11][] Senders that can be constrained for the `urn:x-nmos:cap:transport:hkep` capability to either `true` or `false`, any Senders constrained to `false` MUST cause that Input to become non-HDCP protected. Consequently, any of these Senders  constrained to `true` MUST enter the IS-11 `active_constraints_violation` state, because the essence is no longer HDCP-protected until the `urn:x-nmos:cap:transport:hkep` capability of all relevant Senders is set to `true`.
+For an Input shared by multiple [IS-11][] Senders that can be constrained for the `urn:x-nmos:cap:transport:hkep` capability to either `true` or `false`, any Senders constrained to `false` MUST cause that Input to become non-HDCP protected. Consequently, any of these Senders constrained to `true` MUST enter the IS-11 `active_constraints_violation` state, because the essence is no longer HDCP-protected until the `urn:x-nmos:cap:transport:hkep` capability of all relevant Senders is set to `true`.
 
 
 [RFC-2119]: https://tools.ietf.org/html/rfc2119 "Key words for use in RFCs"
