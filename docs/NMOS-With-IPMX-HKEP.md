@@ -30,7 +30,7 @@ Nodes compliant with this specification MUST implement [IS-04][] v1.3 or higher 
 
 ## HKEP
 
-A Receiver SHOULD provide a `urn:x-nmos:cap:transport:hkep` capability to indicate its support for Senders that use HDCP encryption and the HKEP protocol. A singular capability value of `true` indicates support for HDCP encryption and the HKEP protocol, while a singular value of `fals`e indicates that they are not supported
+A Receiver SHOULD provide a `urn:x-nmos:cap:transport:hkep` capability to indicate its support for Senders that use HDCP encryption and the HKEP protocol. A singular capability value of `true` indicates support for HDCP encryption and the HKEP protocol, while a singular value of `false` indicates that they are not supported
 
 A Receiver capability using both `true` and `false` values indicates the Receiver supports both HDCP encrypted and non-HDCP streams
 
