@@ -52,7 +52,6 @@ An example Sender and Receiver resources are provided in [Examples](./examples).
 
 The `hkep` attribute defined in [TR-10-5][] is not yet registered with IANA. If it were, the definition would indicate "Usage Level: session, media" meaning that a session-level `hkep` attribute represents the default value for a media-level `hkep` attribute if the latter is not specified. The SDP transport file may therefore provide `hkep` information either at the session level and/or the media level.
 
-In the HKEP specification, the use of the expression "hkep session attribute" does not define the usage level of the `hkep` attribute but simply refers to it at its most generic level, which is the session level.
 
 An example of an SDP transport file is provided in [Examples](./examples).
 
