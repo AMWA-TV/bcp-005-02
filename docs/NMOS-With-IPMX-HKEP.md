@@ -50,7 +50,7 @@ An example Sender and Receiver resources are provided in [Examples](./examples).
 
 ### SDP Transport File
 
-The `hkep` attribute defined in [TR-10-5][] is not yet registered with IANA. If it were, the definition would indicate "Usage Level: session, media" meaning that a session-level `hkep` attribute represents the default value for a media-level `hkep` attribute if the latter is not specified. The SDP transport file may therefore provide `hkep` information either at the session level and/or the media level.
+The `hkep` attribute defined in [TR-10-5][] is used in an SDP transport file to indicate that HDCP encryption and the HKEP protocol are used.
 
 
 An example of an SDP transport file is provided in [Examples](./examples).
