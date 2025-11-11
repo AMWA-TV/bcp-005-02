@@ -30,11 +30,9 @@ Nodes compliant with this specification MUST implement [IS-04][] v1.3 or higher 
 
 ## HKEP
 
-A Receiver SHOULD provide a `urn:x-nmos:cap:transport:hkep` capability to indicate its support for Senders that use HDCP encryption and the HKEP protocol. A capability value of `true` indicates support for HDCP encryption and the HKEP protocol, while a value of `false` indicates that they are not supported.
+A Receiver SHOULD provide a `urn:x-nmos:cap:transport:hkep` capability to indicate its support for Senders that use HDCP encryption and the HKEP protocol. If this capability has a singular value of `true`, that indicates support for HDCP encryption and the HKEP protocol. If this capability has a singular value of `false`, that indicates that they are not supported. Specifying both `true` and `false` values indicates the Receiver supports both HDCP encrypted and non-HDCP streams.
 
-A Receiver MAY support either or both `true` and `false` values.
-
-A Controller MUST verify the compliance of Receivers with an active Sender using HDCP encryption and the HKEP protocol by referring to the Sender's SDP transport file `hkep` attribute or by checking the Sender's associated `hkep` attribute. The presence of the `hkep` attribute in an SDP transport file or a value of `true` for the associated `hkep` Sender attribute indicates that the stream is HDCP-protected. Only Receivers supporting HDCP encryption and the HKEP protocol MAY consume such streams.
+A Controller MUST verify the compliance of Receivers with an active Sender using HDCP encryption and the HKEP protocol by referring to the Sender's SDP transport file `hkep` attribute or by checking the Sender's associated `hkep` attribute. The presence of the `hkep` attribute in an SDP transport file or a value of `true` for the associated `hkep` Sender attribute indicates that the stream is HDCP-protected. Only Receivers supporting HDCP encryption and the HKEP protocol are able to consume such streams.
 
 A Sender compliant with the [HKEP](#hkep) section of this document MUST provide a `hkep` Sender attribute to indicate that HDCP encryption and the HKEP protocol are used by the Sender. This attribute MUST be `true` if an `hkep` attribute is present in the Sender's SDP transport file, and MUST be `false` if no `hkep` attributes are present. If an SDP transport file is not currently available because the Sender is inactive, this attribute indicates whether or not such an SDP transport file would contain an `hkep` attribute if the Sender were active at that time.
 
@@ -46,11 +44,14 @@ A Sender MAY provide a `urn:x-nmos:cap:transport:hkep` capability to indicate th
 
 > Note: HKEP is only available for RTP based transport protocols, all of which use an SDP transport file.
 
+An example Sender and Receiver resources are provided in [Examples](./examples).
+
 ### SDP Transport File
 
-The `hkep` attribute defined in [TR-10-5][] is not yet registered with IANA. If it were, the definition would indicate "Usage Level: session, media" meaning that a session-level `hkep` attribute represents the default value for a media-level `hkep` attribute if the latter is not specified. The SDP transport file may therefore provide `hkep` information either at the session level and/or the media level.
+The `hkep` attribute defined in [TR-10-5][] is used in an SDP transport file to indicate that HDCP encryption and the HKEP protocol are used.
 
-In the HKEP specification, the use of the expression "hkep session attribute" does not define the usage level of the `hkep` attribute but simply refers to it at its most generic level, which is the session level.
+
+An example of an SDP transport file is provided in [Examples](./examples).
 
 ### Activation
 
@@ -68,7 +69,7 @@ If the `urn:x-nmos:cap:transport:hkep` capability allows both `true` and `false`
 
 ### HDCP Content Protection Notifications
 
-The base notification method is not strictly required but is highly recommended. However, if a device implements enhanced notifications through BCP-008-01 or BCP-008-02, it MUST also implement the base notification method.
+The base notification method is strongly RECOMMENDED, while enhanced notification methods via [BCP-008-01][] or [BCP-008-02][] are RECOMMENDED.
 
 #### Base notification method
 
