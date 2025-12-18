@@ -44,14 +44,14 @@ A Sender MAY provide a `urn:x-nmos:cap:transport:hkep` capability to indicate th
 
 > Note: HKEP is only available for RTP based transport protocols, all of which use an SDP transport file.
 
-An example Sender and Receiver resources are provided in [Examples](./examples).
+An example Sender and Receiver resources are provided in [Examples](../examples/).
 
 ### SDP Transport File
 
 The `hkep` attribute defined in [TR-10-5][] is used in an SDP transport file to indicate that HDCP encryption and the HKEP protocol are used.
 
 
-An example of an SDP transport file is provided in [Examples](./examples).
+An example of an SDP transport file is provided in [Examples](../examples/).
 
 ### Activation
 
