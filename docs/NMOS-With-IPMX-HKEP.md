@@ -1,4 +1,4 @@
-# AMWA BCP-005-02: NMOS With IPMX/HKEP
+# AMWA BCP-005-02 NMOS Support for IPMX/HKEP 
 {:.no_toc}
 {:toc}
 
