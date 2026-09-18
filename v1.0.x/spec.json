@@ -1,0 +1,28 @@
+{
+  "amwa_id": "BCP-005-02",
+  "url": "https://specs.amwa.tv/bcp-005-02",
+  "name": "NMOS Support for IPMX/HKEP",
+  "status": "AMWA Specification",
+  "repo_name": "bcp-005-02",
+  "alt_repo_name": "bcp-ipmx-hkep",
+  "repo_url": "https://github.com/AMWA-TV/bcp-005-02",
+  "releases": [
+    "v1.0.0"
+  ],
+  "default_branch": "v1.0.x",
+  "show_in_index": true,
+  "intro": {
+    "what_does_it_do": [
+      "Establishes a standardized mechanism for NMOS Senders and Receivers to declare support for HDCP over IP streaming using IPMX/HKEP (VSF TR-10-5)."
+    ],
+    "why_does_it_matter": [
+      "An NMOS Controller can verify that any Receiver is compliant with a Sender producing HDCP-encrypted streams, as only IPMX/HKEP-compliant Receivers can process such content.",
+      "A standardized framework enables Controllers to systematically verify and/or enforce compliance."
+    ],
+    "how_does_it_work": [
+      "Documents how IPMX/HKEP capabilities are announced by both Senders and Receivers.",
+      "Explains how to constrain a Sender’s IPMX/HKEP capability.",
+      "Outlines the requirements for Senders, Receivers, and Controllers regarding the IPMX/HKEP feature."
+    ]
+  }
+}
